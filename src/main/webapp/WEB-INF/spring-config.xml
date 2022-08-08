@@ -11,7 +11,16 @@
            http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <context:component-scan base-package="com.example.test.controller"/>
 
-    <bean class="com.example.test.config.ConfigurationDataSource" id="source"/>
+    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="location" value="db.properties"/>
+    </bean>
+
+    <bean class="com.example.test.config.ConfigurationDataSource" id="source">
+        <property name="driver" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.name}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
 
     <bean class="com.example.test.dao.PersonDao" id="personDao">
         <property name="jdbcTemplate" value="#{source.jdbcTemplate()}"/>

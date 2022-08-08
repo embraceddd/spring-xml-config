@@ -1,17 +1,24 @@
 package com.example.test.config;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
-
+@Getter
+@Setter
 public class ConfigurationDataSource {
+    private String url;
+    private String driver;
+    private String username;
+    private String password;
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://localhost:5432/restnoboot");
-        dataSource.setUsername("postgres");
-        dataSource.setPassword("123post");
+        dataSource.setDriverClassName(driver);
+        dataSource.setUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
         return dataSource;
     }
 
