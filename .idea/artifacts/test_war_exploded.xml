@@ -32,6 +32,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.3.22" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.3.22" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.3.22" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.dataformat:jackson-dataformat-csv:2.13.3" />
         </element>
       </element>
       <element id="directory" name="META-INF">

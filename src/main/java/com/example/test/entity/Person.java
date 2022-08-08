@@ -14,4 +14,15 @@ public class Person {
     String name;
     String jobTitle;
     int salary;
+
+    public Person(String name, String jobTitle, int salary) {
+        this.name = name;
+        this.jobTitle = jobTitle;
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + jobTitle + " " + salary;
+    }
 }

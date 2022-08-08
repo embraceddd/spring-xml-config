@@ -26,5 +26,9 @@
         <property name="jdbcTemplate" value="#{source.jdbcTemplate()}"/>
     </bean>
 
+    <bean class="com.example.test.service.PersonService" id="personService">
+        <property name="personDao" value="#{personDao}"/>
+    </bean>
+
     <mvc:annotation-driven />
 </beans>
